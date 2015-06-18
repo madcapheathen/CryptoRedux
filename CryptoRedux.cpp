@@ -1,5 +1,6 @@
 // CryptoRedux.cpp : 
 //
+// Now with 100% more Git!
 #include "Standard_Include.h"
 
 

@@ -2,6 +2,6 @@
 
 #include <bitset>
 #include <vector>
-#include <stdio.h>
+#include <iostream>
 #include <cmath>
 

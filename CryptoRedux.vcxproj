@@ -79,9 +79,11 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bitwise.cpp" />
     <ClCompile Include="CryptoRedux.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bitwise.h" />
     <ClInclude Include="Standard_Include.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

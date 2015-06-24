@@ -55,3 +55,21 @@ string bits_to_b64(vector<bitset<8>> bits){
 	}
 	return b64;
 }
+
+string bits_to_hex(vector< bitset<8> > bits){
+	string charlist = "0123456789abcdef";
+	string hex;
+	for (int i = 0; i < bits.size(); ++i){
+		hex.push_back(charlist.at(bits.at(i).to_ulong() / 16));
+		hex.push_back(charlist.at(bits.at(i).to_ulong() % 16));
+	}
+	return hex;
+}
+
+vector< bitset<8> > xor(vector<bitset<8>> first, vector<bitset<8>> second){
+	vector< bitset<8> > result(first);
+	for (int i = 0; i < result.size(); ++i){
+		result.at(i) = first.at(i) ^ second.at(i);
+	}
+	return result;
+}

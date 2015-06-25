@@ -17,6 +17,9 @@ int main(int argc, char* argv[])
 	//vector<bitset<8>> second = hex_to_bits("686974207468652062756c6c277320657965");
 	//cout << bits_to_hex(xor(first, second)) << endl;
 
+	// Set 1, Challenge 3
+	cout << bits_to_text(single_character_xor(hex_to_bits("1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"))) << endl;
+
 	return 0;
 }
 

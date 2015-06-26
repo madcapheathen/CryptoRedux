@@ -22,24 +22,33 @@ int main(int argc, char* argv[])
 	//cout << bits_to_text(single_character_xor(hex_to_bits("1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"))) << endl;
 
 	// Set 1, Challenge 4
-	fstream fs("4.txt");
-	string best_hex = "";
-	vector<bitset<8>> best_text;
-	int high_score = 0;
-	while (!fs.eof()){
-		string next = "";
-		getline(fs, next);
-		vector<bitset<8>> result = single_character_xor(hex_to_bits(next));
-		int score = score_char_freq(result);
-		if (score > high_score){
-			high_score = score;
-			best_hex = next;
-			best_text = result;
-		}
-	}
-	cout << "Encoded string: " << best_hex << endl;
-	cout << "Decoded to: " << bits_to_text(best_text) << endl;
+	//fstream fs("4.txt");
+	//string best_hex = "";
+	//vector<bitset<8>> best_text;
+	//int high_score = 0;
+	//while (!fs.eof()){
+	//	string next = "";
+	//	getline(fs, next);
+	//	vector<bitset<8>> result = single_character_xor(hex_to_bits(next));
+	//	int score = score_char_freq(result);
+	//	if (score > high_score){
+	//		high_score = score;
+	//		best_hex = next;
+	//		best_text = result;
+	//	}
+	//}
+	//cout << "Encoded string: " << best_hex << endl;
+	//cout << "Decoded to: " << bits_to_text(best_text) << endl;
 
+	// Set 1, Challenge 5
+	fstream fs("5in.txt");
+	string ciphertext;
+	char next = fs.get();
+	while (!fs.eof()){
+		ciphertext.push_back(next);
+		next = fs.get();
+	}
+	cout << bits_to_hex(encrypt_RKXOR(text_to_bits(ciphertext), text_to_bits("ICE"))) << endl;
 	return 0;
 }
 

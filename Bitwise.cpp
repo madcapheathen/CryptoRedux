@@ -79,8 +79,8 @@ vector< bitset<8> > xor(vector<bitset<8>> first, vector<bitset<8>> second){
 }
 
 int score_char_freq(vector<bitset<8>> text){
-	int weights[] = {81,15,28,43,127,22,20,61,70,2,8,40,24,67,75,19,1,60,63,91,28,10,24,2,20,1,128};
-	int score=0;
+	int weights[] = { 81, 15, 28, 43, 127, 22, 20, 61, 70, 2, 8, 40, 24, 67, 75, 19, 1, 60, 63, 91, 28, 10, 24, 2, 20, 1, 128 };
+	int score = 0;
 	for (int i = 0; i < text.size(); ++i){
 		int current = LOWERCASE.find(char(text.at(i).to_ulong()));
 		if (current >= 0){
@@ -118,6 +118,22 @@ string bits_to_text(vector<bitset<8>> bits){
 	string result;
 	for (int i = 0; i < bits.size(); ++i){
 		result.push_back(char(bits.at(i).to_ulong()));
+	}
+	return result;
+}
+
+vector<bitset<8>> text_to_bits(string text){
+	vector<bitset<8>> result;
+	for (int i = 0; i < text.size(); ++i){
+		result.push_back(bitset<8>(int(text.at(i))));
+	}
+	return result;
+}
+
+vector<bitset<8>> encrypt_RKXOR(vector<bitset<8>> cipher, vector<bitset<8>> key){
+	vector<bitset<8>> result = cipher;
+	for (int i = 0; i < cipher.size(); ++i){
+		result.at(i) ^= key.at(i%key.size());
 	}
 	return result;
 }

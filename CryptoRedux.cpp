@@ -41,14 +41,18 @@ int main(int argc, char* argv[])
 	//cout << "Decoded to: " << bits_to_text(best_text) << endl;
 
 	// Set 1, Challenge 5
-	fstream fs("5in.txt");
-	string ciphertext;
-	char next = fs.get();
-	while (!fs.eof()){
-		ciphertext.push_back(next);
-		next = fs.get();
-	}
-	cout << bits_to_hex(encrypt_RKXOR(text_to_bits(ciphertext), text_to_bits("ICE"))) << endl;
-	return 0;
+	//fstream fs("5in.txt");
+	//string ciphertext;
+	//char next = fs.get();
+	//while (!fs.eof()) {
+	//	ciphertext.push_back(next);
+	//	next = fs.get();
+	//}
+	//cout << ciphertext << endl;
+	//cout << bits_to_hex(encrypt_RKXOR(text_to_bits(ciphertext), text_to_bits("ICE"))) << endl;
+	//return 0;
+
+	// Set 1, Challenge 6
+
 }
 

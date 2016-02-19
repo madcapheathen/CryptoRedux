@@ -15,3 +15,4 @@ vector<bitset<8>> single_character_xor(vector<bitset<8>> cipher);
 string bits_to_text(vector< bitset<8> > bits);
 vector<bitset<8>> text_to_bits(string text);
 vector<bitset<8>> encrypt_RKXOR(vector<bitset<8>> cipher, vector<bitset<8>> key);
+int hamming_distance(vector<bitset<8>> first, vector<bitset<8>> second);

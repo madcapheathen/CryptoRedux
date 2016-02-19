@@ -91,6 +91,9 @@ int score_char_freq(vector<bitset<8>> text){
 			if (current >= 0){
 				score += weights[current];
 			}
+			else if (text.at(i) == ' ') {
+				score += 100;
+			}
 		}
 	}
 	return score;
@@ -136,4 +139,12 @@ vector<bitset<8>> encrypt_RKXOR(vector<bitset<8>> cipher, vector<bitset<8>> key)
 		result.at(i) ^= key.at(i%key.size());
 	}
 	return result;
+}
+
+int hamming_distance(vector<bitset<8>> first, vector<bitset<8>> second) {
+	int distance = 0;
+	for (int i = 0; i < first.size(); ++i) {
+		distance += (first.at(i) ^= second.at(i)).count();
+	}
+	return distance;
 }
